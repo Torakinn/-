@@ -65,9 +65,15 @@ ox_inventory、ox_target、ox_libを使用した完全な日本語対応の強�
 
 1. **リソースのダウンロード**
    ```bash
-   cd resources
-   git clone https://github.com/yourusername/qb-cayoperico.git
+   cd resources/[qb]
+   git clone https://github.com/Torakinn/- cayoperico-temp
+   cd cayoperico-temp
+   cp -r qb-cayoperico ../
+   cd ..
+   rm -rf cayoperico-temp
    ```
+   
+   または、[ダウンロードガイド](../DOWNLOAD_GUIDE.md)を参照してください。
 
 2. **server.cfgに追加**
    ```cfg
