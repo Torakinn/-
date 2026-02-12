@@ -4,7 +4,7 @@ Config = {}
 Config.MinPlayers = 4 -- 最小プレイヤー数
 Config.MaxPlayers = 6 -- 最大プレイヤー数
 Config.MinCops = 4 -- 必要な警察官数
-Config.Cooldown = 3600000 -- クールダウン時間（60分 = 3600000ミリ秒）
+Config.Cooldown = 3600000 -- クールダウン時間（60分 = 3,600,000ミリ秒）
 
 -- 島のメイン位置
 Config.IslandLocation = vector3(4840.0, -5210.0, 2.0)

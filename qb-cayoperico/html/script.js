@@ -269,10 +269,6 @@ function startVaultHack() {
 
 // GetParentResourceName helper
 function GetParentResourceName() {
-    if (window.location.hostname === '') {
-        return 'qb-cayoperico';
-    }
-    
     const match = window.location.pathname.match(/\/([^/]+)\/html/);
     return match ? match[1] : 'qb-cayoperico';
 }

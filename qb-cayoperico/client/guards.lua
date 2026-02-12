@@ -13,6 +13,7 @@ CreateThread(function()
         's_m_m_highsec_02',
         's_m_y_blackops_01',
         's_m_y_blackops_02',
+        's_m_y_blackops_03',
         's_m_y_marine_01'
     }
     

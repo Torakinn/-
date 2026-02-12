@@ -50,7 +50,7 @@ end
 -- チーム選択メニュー
 function ShowTeamSelectionMenu()
     QBCore.Functions.TriggerCallback('qb-cayoperico:callback:getNearbyPlayers', function(nearbyPlayers)
-        local teamMembers = { PlayerPedId() }
+        local teamMembers = { GetPlayerServerId(PlayerId()) }
         
         local options = {}
         

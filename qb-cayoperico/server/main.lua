@@ -275,7 +275,11 @@ RegisterNetEvent('qb-cayoperico:server:escapeComplete', function()
     -- 報酬分配
     local memberCount = #heist.members
     local leaderShare = math.floor(totalReward * (Config.DefaultSplit.leader / 100))
-    local memberShare = math.floor((totalReward - leaderShare) / (memberCount - 1))
+    local memberShare = 0
+    
+    if memberCount > 1 then
+        memberShare = math.floor((totalReward - leaderShare) / (memberCount - 1))
+    end
     
     -- リーダーに報酬
     local Leader = QBCore.Functions.GetPlayer(src)
