@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cayo Perico - Hacking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hack-container" class="hidden">
+        <!-- セキュリティハック -->
+        <div id="security-hack" class="hack-type hidden">
+            <div class="hack-header">
+                <h2>セキュリティハック</h2>
+                <div class="timer" id="security-timer">30</div>
+            </div>
+            <div class="hack-content">
+                <div class="skill-check-container">
+                    <div class="skill-check-circle">
+                        <div class="skill-check-target"></div>
+                        <div class="skill-check-indicator"></div>
+                    </div>
+                    <p class="instruction">緑色のゾーンでスペースキーを押してください</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ドアハック -->
+        <div id="door-hack" class="hack-type hidden">
+            <div class="hack-header">
+                <h2>ドアハック</h2>
+                <div class="timer" id="door-timer">45</div>
+            </div>
+            <div class="hack-content">
+                <div class="memory-grid" id="memory-grid">
+                    <!-- JavaScriptで動的に生成 -->
+                </div>
+                <p class="instruction">順番を記憶してクリックしてください</p>
+            </div>
+        </div>
+
+        <!-- 金庫ハック -->
+        <div id="vault-hack" class="hack-type hidden">
+            <div class="hack-header">
+                <h2>金庫室ハック - 指紋認証</h2>
+                <div class="timer" id="vault-timer">90</div>
+            </div>
+            <div class="hack-content">
+                <div class="fingerprint-container">
+                    <canvas id="fingerprint-canvas" width="400" height="400"></canvas>
+                    <div class="fingerprint-overlay">
+                        <div class="scan-line"></div>
+                    </div>
+                </div>
+                <div class="fingerprint-controls">
+                    <button class="btn" id="rotate-left">← 回転</button>
+                    <button class="btn" id="rotate-right">回転 →</button>
+                    <button class="btn btn-success" id="submit-fingerprint">確認</button>
+                </div>
+                <p class="instruction">指紋パターンを正しい位置に回転させてください</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

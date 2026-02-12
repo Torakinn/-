@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: transparent;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#hack-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    min-height: 400px;
+    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+    padding: 20px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.hack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #00ff88;
+}
+
+.hack-header h2 {
+    color: #00ff88;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.timer {
+    background: #ff0044;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 0, 68, 0.5);
+}
+
+.timer.warning {
+    animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.hack-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.instruction {
+    color: #00ff88;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* セキュリティハック - スキルチェック */
+.skill-check-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.skill-check-circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 4px solid #333;
+    border-radius: 50%;
+    background: #1a1a2e;
+}
+
+.skill-check-target {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 70deg,
+        rgba(0, 255, 136, 0.5) 70deg,
+        rgba(0, 255, 136, 0.5) 110deg,
+        transparent 110deg,
+        transparent 360deg
+    );
+    animation: rotateTarget 3s linear infinite;
+}
+
+@keyframes rotateTarget {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.skill-check-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 140px;
+    background: white;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+}
+
+/* ドアハック - 記憶ゲーム */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.memory-tile {
+    background: #2d2d44;
+    border: 2px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.memory-tile:hover {
+    border-color: #00ff88;
+    transform: scale(1.05);
+}
+
+.memory-tile.active {
+    background: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+.memory-tile.correct {
+    background: #00ff88;
+    border-color: #00ff88;
+    pointer-events: none;
+}
+
+.memory-tile.wrong {
+    background: #ff0044;
+    border-color: #ff0044;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* 金庫ハック - 指紋認証 */
+.fingerprint-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #1a1a2e;
+    border: 2px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#fingerprint-canvas {
+    display: block;
+}
+
+.fingerprint-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #00ff88, transparent);
+    box-shadow: 0 0 10px #00ff88;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    from { top: 0; }
+    to { top: 100%; }
+}
+
+.fingerprint-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    background: #2d2d44;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: #00ff88;
+    color: #1e1e2e;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.btn-success {
+    background: #00ff88;
+    color: #1e1e2e;
+}
+
+.btn-success:hover {
+    background: #00cc6a;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    #hack-container {
+        width: 90%;
+    }
+    
+    .skill-check-circle {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .memory-grid {
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(4, 70px);
+    }
+    
+    .fingerprint-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    #fingerprint-canvas {
+        width: 300px;
+        height: 300px;
+    }
+}

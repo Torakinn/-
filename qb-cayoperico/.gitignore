@@ -1,0 +1,27 @@
+# FiveM Resource
+*.log
+*.cache
+
+# Development
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+
+# Test files
+test/
+tests/
+
+# Documentation drafts
+drafts/
