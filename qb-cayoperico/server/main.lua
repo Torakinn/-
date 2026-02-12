@@ -277,6 +277,7 @@ RegisterNetEvent('qb-cayoperico:server:escapeComplete', function()
     local leaderShare = math.floor(totalReward * (Config.DefaultSplit.leader / 100))
     local memberShare = 0
     
+    -- ソロプレイ時は全額リーダーが受け取る
     if memberCount > 1 then
         memberShare = math.floor((totalReward - leaderShare) / (memberCount - 1))
     end

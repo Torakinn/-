@@ -269,6 +269,7 @@ function startVaultHack() {
 
 // GetParentResourceName helper
 function GetParentResourceName() {
+    // リソース名をパスから抽出、フォールバックとしてデフォルト名を使用
     const match = window.location.pathname.match(/\/([^/]+)\/html/);
-    return match ? match[1] : 'qb-cayoperico';
+    return match ? match[1] : 'qb-cayoperico'; // デフォルトリソース名
 }
